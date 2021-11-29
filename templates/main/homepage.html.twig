@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue sur movieDB{% endblock %}
+
+{% block body %}
+
+<ul class="list-group list-group-flush">
+    {% for movie in movie_list %}
+    <li class="list-group-item"><a href="{{ path('movie_show', {id : movie.id}) }}">{{ movie.title }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

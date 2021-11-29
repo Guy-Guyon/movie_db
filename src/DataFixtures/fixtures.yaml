@@ -1,0 +1,16 @@
+App\Entity\Genre:
+    genre_{1..23}:
+        name (unique): '<word()>' 
+App\Entity\Movie:
+    movie_{1..50}:
+        title: '<realText(50)>'
+        genres: '<numberBetween(0, 4)>x @genre_*'
+App\Entity\Person:
+    person_{1..500}:
+        name (unique): '<name()>'
+App\Entity\Casting:
+    casting_{1..200}:
+        movie: '@movie_*'
+        person: '@person_*'
+        role: '<firstName()> le <jobTitle()>'
+        creditOrder: '<numberBetween(0, 200)>'

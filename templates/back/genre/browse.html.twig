@@ -1,0 +1,15 @@
+{% extends 'back/genre/_base_genre.html.twig' %}
+
+{% block title %}Liste des genres{% endblock %}
+
+{% block body %}
+<h1> Liste des genres</h1>
+
+
+<ul class="list-group list-group-flush">
+    {% for genre in genre_list %}
+    <li class="list-group-item"><a href="{{ path('admin_genre_read', {id : genre.id}) }}">{{ genre.name }}</a></li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

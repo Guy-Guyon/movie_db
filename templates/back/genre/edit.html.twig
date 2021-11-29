@@ -1,0 +1,17 @@
+{% extends 'back/genre/_base_genre.html.twig' %}
+
+{% block title %}Edition du genre {{ genre.name }}{% endblock %}
+
+{% block body %}
+<h1>Modifier un genre</h1>
+
+{{ form_start(form) }}
+    {{ form_errors(form) }}
+
+    {{ form_row(form.name) }}
+
+    <button type="submit"> Modifier </button>
+
+{{ form_end(form) }}
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détails du film {{ movie.title }}{% endblock %}
+
+{% block body %}
+<h1> {{ movie.title }}</h1>
+
+<a href="{{ path('admin_movie_edit', {"id" : movie.id}) }}">éditer</a> - 
+<a class="btn btn-danger" href="{{ path('admin_movie_delete', {"id" : movie.id}) }}">Supprimer</a>
+
+<h2>Liste des genres associés</h2>
+
+<ul class="list-group list-group-flush">
+{% for genre in movie.genres %}
+    <li class="list-group-item">{{ genre.name }}</li>
+{% endfor %}
+</ul>
+
+
+<h2>Liste des acteurs</h2>
+
+<ul class="list-group list-group-flush">
+{% for casting in movie.castings %}
+    <li class="list-group-item">{{ casting.role }} : {{ casting.person.name }}</li>
+{% endfor %}
+</ul>
+{% endblock %}

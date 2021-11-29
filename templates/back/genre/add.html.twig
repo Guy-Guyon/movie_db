@@ -1,0 +1,19 @@
+{% extends 'back/genre/_base_genre.html.twig' %}
+
+{% block title %}Ajout d'un Genre{% endblock %}
+
+{% block menu_genre %} active {% endblock %}
+
+{% block body %}
+<h1>Ajouter un genre</h1>
+
+{{ form_start(form) }}
+    {{ form_errors(form) }}
+
+    {{ form_row(form.name) }}
+
+    <button type="submit">Créer</button>
+
+{{ form_end(form) }}
+
+{% endblock %}
